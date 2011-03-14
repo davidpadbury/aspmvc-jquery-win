@@ -1,0 +1,23 @@
+﻿@model StuffToDo.Web.Models.TodoItem
+@{ 
+    var todoElementId = string.Format("todo-item-{0}", Model.Id);
+    var completeAction = Model.Completed ? "Uncomplete" : "Complete";
+}
+<div data-todo-id="@Model.Id" class="todo-item @(Model.Completed ? "completed" : "uncompleted")">
+    <span class="doby">@Model.DoBy.ToString("yyyy-MM-dd")</span>
+    <span>: </span>
+    <span class="description">@Model.Description</span>
+    <span class="actions">
+        @Ajax.ActionLink(completeAction, completeAction, new
+        {
+            id = Model.Id
+        },
+        new AjaxOptions
+        {
+            UpdateTargetId = todoElementId,
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST"
+        })
+        <a href="Delete/@Model.Id" class="delete">Delete</a>
+    </span>
+</div>

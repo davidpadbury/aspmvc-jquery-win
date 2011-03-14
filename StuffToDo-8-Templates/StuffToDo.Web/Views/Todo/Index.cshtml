@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div id="todo-create">
+    <form>
+        <input name="doby" type="date" placeholder="Do By" />
+        <input name="description" type="text" placeholder="Description" />
+        <input type="submit" value="Add" />
+    </form>
+</div>
+
+<ul id="todo-list" class="todo-list">
+
+</ul>
+
+<script>
+
+    var app = new lab.TodoApp(window.location.pathname);
+
+</script>
+
+<script id="todo-item-tmpl" type="text/x-jquery-tmpl">
+    <li data-todo-id="${Id}" class="todo-item ${Completed ? 'complete' : 'uncomplete'}">
+        <span class="doby">${DoBy}</span>
+        <span>: </span>
+        <span class="description">${Description}</span>
+        <span class="actions">
+            <a href="#" class="complete">${Completed ? 'Uncomplete' : 'Complete'}</a>
+            <a href="#" class="delete">Delete</a>
+        </span>
+    </li>
+</script>

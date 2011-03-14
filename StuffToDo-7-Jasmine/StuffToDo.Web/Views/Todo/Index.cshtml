@@ -1,0 +1,19 @@
+﻿@model IEnumerable<StuffToDo.Web.Models.TodoItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+@Html.ActionLink("Create", "Create")
+</div>
+
+<ul>
+    @foreach(var item in Model)
+    {
+        <li id="todo-item-@item.Id">
+            @Html.Partial("_TodoItem", item)
+        </li>
+    }
+</ul>
+

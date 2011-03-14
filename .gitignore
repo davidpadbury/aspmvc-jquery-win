@@ -1,0 +1,34 @@
+# ReSharper meta directory
+_ReSharper*
+
+# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
+bin
+obj
+
+# user settings
+*.user
+*.suo
+
+# if you have pictures, windows will likely create those annoying index files
+Thumbs.db
+
+# mstest test results
+TestResults
+
+# NuGet packages shouldn't be in SCC, use "nuget i packages.config -o Packages"
+*/packages
+
+
+# vim files and other tmp stuff
+*.swp
+*~
+
+# Office temp files
+~$*
+
+# Databases shouldn't be there either...
+*.sdf
+
+# Exclude SquishIt Compiled files
+app_*.css
+app_*.js

@@ -1,0 +1,39 @@
+﻿@model StuffToDo.Web.Models.TodoItem
+
+@{
+    ViewBag.Title = "New Item";
+}
+
+<h2>New Item</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>TodoItem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DoBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DoBy)
+            @Html.ValidationMessageFor(model => model.DoBy)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

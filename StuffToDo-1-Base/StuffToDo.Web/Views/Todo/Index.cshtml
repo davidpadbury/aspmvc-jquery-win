@@ -1,0 +1,31 @@
+﻿@model IEnumerable<StuffToDo.Web.Models.TodoItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+@Html.ActionLink("Create", "Create")
+</div>
+
+<ul>
+    @foreach(var item in Model)
+    {
+    <li class="todo-item @(item.Completed ? "completed" : "uncompleted")">
+        <span class="doby">@item.DoBy.ToString("yyyy-MM-dd")</span>
+        <span>: </span>
+        <span class="description">@item.Description</span>
+        <span class="actions">
+            @using (Html.BeginForm(new { Action = @item.Completed ? "Uncomplete" : "Complete", id = item.Id }))
+            {
+                <input type="submit" value="@(item.Completed ? "Uncomplete" : "Complete")" />
+            }
+            @using (Html.BeginForm(new { Action = "Delete", id = item.Id }))
+            {
+                <input type="submit" value="Delete" />
+            }
+        </span>
+    </li>
+    }
+</ul>
+

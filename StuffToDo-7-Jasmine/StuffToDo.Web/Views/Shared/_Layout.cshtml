@@ -1,0 +1,33 @@
+﻿@using SquishIt.Framework
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    @Html.Raw(Bundle.Css()
+        .Add("~/Content/Site.css")
+        .Add("~/Content/themes/base/jquery-ui.css")
+        .Render("~/Content/app_#.css"))
+        
+    @Html.Raw(Bundle.JavaScript()
+        .Add("~/Scripts/modernizr.js")
+        .Add("~/Scripts/jquery-1.4.4.js")
+        .Add("~/Scripts/jquery-ui.js")
+        .Add("~/Scripts/jquery.validate.js")
+        .Add("~/Scripts/jquery.validate.unobtrusive.js")
+        .Add("~/Scripts/jquery.unobtrusive-ajax.js")
+        .Add("~/Scripts/lab.dates.js")
+        .Add("~/Scripts/lab.todayOrLaterValidator.js")
+        .Add("~/Scripts/lab.todoItem.js")
+        .Add("~/Scripts/lab.todo.js")
+        .Render("~/Content/app_#.js"))
+
+</head>
+
+<body>
+    <header>
+        <h1>Stuff Todo</h1>
+    </header>
+    @RenderBody()
+</body>
+</html>
