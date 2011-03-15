@@ -12,7 +12,6 @@
 
         _alert: function () {
             window.alert(this.textbox.val());
-            this.textbox.val('');
         }
 
     });
