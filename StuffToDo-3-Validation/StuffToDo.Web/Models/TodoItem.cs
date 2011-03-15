@@ -11,12 +11,9 @@ namespace StuffToDo.Web.Models
     {
         public int Id { get; set; }
         public TodoList TodoList { get; set; }
-        
-        [Required]
         public string Description { get; set; }
 
-        [Required, DataType(DataType.Date)]
-        [TodayOrLater]
+        [DataType(DataType.Date)]
         public DateTime DoBy { get; set; }
 
         public bool Completed { get; set; }
