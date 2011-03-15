@@ -8,16 +8,10 @@
     <span>: </span>
     <span class="description">@Model.Description</span>
     <span class="actions">
-        @Ajax.ActionLink(completeAction, completeAction, new
+        @using (Html.BeginForm(new { Action = completeAction, id = Model.Id }))
         {
-            id = Model.Id
-        },
-        new AjaxOptions
-        {
-            UpdateTargetId = todoElementId,
-            InsertionMode = InsertionMode.Replace,
-            HttpMethod = "POST"
-        })
+            <input type="submit" value="@completeAction" />
+        }
         @using (Html.BeginForm(new { Action = "Delete", id = Model.Id }))
         {
             <input type="submit" value="Delete" />

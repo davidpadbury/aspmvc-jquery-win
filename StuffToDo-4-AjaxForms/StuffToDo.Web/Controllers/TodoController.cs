@@ -75,9 +75,6 @@ namespace StuffToDo.Web.Controllers
             item.Completed = completed;
             _todoContext.SaveChanges();
 
-            if (Request.IsAjaxRequest())
-                return PartialView("_TodoItem", item);
-
             return RedirectToAction("Index");
         }
 
