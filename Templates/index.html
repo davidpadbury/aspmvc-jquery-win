@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Templates</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+        <script src="https://github.com/jquery/jquery-tmpl/raw/master/jquery.tmpl.js"></script>
+        <script>
+            function searchTwitter(term, callback) {
+                var url = 'http://search.twitter.com/search.json?q=' + term + '&callback=?';
+                $.getJSON(url, callback);
+            }
+
+            $(function () {
+
+                $('#search-form').submit(function (e) {
+                    e.preventDefault();
+
+                });
+
+            });
+        
+        </script>
+    </head>
+    <body>
+        
+        <form id="search-form" action="#">
+            <input id="search-text" type="search" />
+            <input id="search-button" type="submit" value="search" />
+        </form>
+        <ul id="results">
+        </ul>
+    </body>
+</html>
